@@ -16,7 +16,7 @@ class ProductsPage extends StatelessWidget {
   }
   PreferredSizeWidget _appBar(BuildContext context){
     return AppBar(
-      backgroundColor: Colors.deepOrangeAccent,
+      backgroundColor: Colors.amber,
       title: Text("Products",style: TextStyle(color: Colors.white),),
       actions: [
         IconButton(onPressed: (){
@@ -34,12 +34,13 @@ class ProductsPage extends StatelessWidget {
           Product product = PRODUCTS[index];
           return ListTile(
             leading: Container(
-              height: 40,
-              width: 40,
+              height: 45,
+              width: 45,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: product.color,
+                color: Colors.amber,
               ),
+              child: Icon(product.icon.icon,color: Colors.white,),
             ),
             title:Text(product.name,style: TextStyle(fontSize: 18),) ,
             subtitle: Text("Rs: ${product.price.toString()}"),

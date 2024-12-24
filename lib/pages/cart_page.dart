@@ -17,7 +17,7 @@ class CartPage extends StatelessWidget {
 
   PreferredSizeWidget _appBar(){
     return AppBar(
-      backgroundColor: Colors.deepOrangeAccent,
+      backgroundColor: Colors.amber,
       title: Text("Cart",style: TextStyle(color: Colors.white),),
 
     );
@@ -35,12 +35,13 @@ class CartPage extends StatelessWidget {
                 Product product = provider.items[index];
               return ListTile(
                 leading: Container(
-                  height: 40,
-                  width: 40,
+                  height: 45,
+                  width: 45,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: product.color
+                    color: Colors.amber
                   ),
+                  child: Icon(product.icon.icon,color: Colors.white,),
                 ),
                 title: Text(product.name,style: TextStyle(fontSize: 18),),
                 subtitle: Text("Rs: ${product.price.toString()}"),
@@ -58,7 +59,7 @@ class CartPage extends StatelessWidget {
           Container(
             height: 60,
               width: double.infinity,
-              color: Colors.green,
+              color: Colors.amber,
               child: Center(child: Padding(
                 padding: const EdgeInsets.all(11.0),
                 child: Row(
