@@ -16,11 +16,12 @@ class ProductsPage extends StatelessWidget {
   }
   PreferredSizeWidget _appBar(BuildContext context){
     return AppBar(
-      title: Text("Products"),
+      backgroundColor: Colors.deepOrangeAccent,
+      title: Text("Products",style: TextStyle(color: Colors.white),),
       actions: [
         IconButton(onPressed: (){
           Navigator.pushNamed(context, "/cart");
-        }, icon: Icon(Icons.shopping_cart)),
+        }, icon: Icon(Icons.shopping_cart,color: Colors.white,)),
       ],
     );
   }
@@ -33,11 +34,15 @@ class ProductsPage extends StatelessWidget {
           Product product = PRODUCTS[index];
           return ListTile(
             leading: Container(
-              height: 25,
-              width: 25,
-              color: product.color,
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: product.color,
+              ),
             ),
-            title:Text(product.name) ,
+            title:Text(product.name,style: TextStyle(fontSize: 18),) ,
+            subtitle: Text("Rs: ${product.price.toString()}"),
             trailing: Checkbox(
               value: cartProvider.items.contains(product),
               onChanged: (value){
